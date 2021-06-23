@@ -27,8 +27,6 @@
 			<version>3.5</version> </dependency> -->
 
 
-
-
 		<!-- https://mvnrepository.com/artifact/org.telegram/telegrambots-spring-boot-starter -->
 		<dependency>
 			<groupId>org.telegram</groupId>
