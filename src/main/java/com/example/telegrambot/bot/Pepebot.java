@@ -12,28 +12,26 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import com.example.telegrambot.service.PepeBot;
+import com.example.telegrambot.service.PepeBotTasks;
 
 @Component
-public class Robotron extends TelegramLongPollingBot {
+public class Pepebot extends TelegramLongPollingBot {
 	
 	@Autowired
-	private PepeBot botTasks;
+	private PepeBotTasks botTasks;
 
-	private static final Logger log = LoggerFactory.getLogger(Robotron.class);
+	private static final Logger log = LoggerFactory.getLogger(Pepebot.class);
 
 	@Value("${telegram.bot.name}")
 	private  String name;
 	@Value("${telegram.bot.token}")
 	private  String token;
 	private String chatId;
-	
 
 	@Override
 	public void onUpdateReceived(Update update) {
 		this.chatId = update.getMessage().getChatId().toString();
 		sendMsg(update);
-
 	}
 
 	@Override
